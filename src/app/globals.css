@@ -44,6 +44,8 @@ body {
 html {
   scroll-behavior: smooth;
   height: 100%;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
 body {
@@ -54,24 +56,45 @@ body {
   position: relative;
   min-height: 100vh;
   line-height: 1.6;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
-/* Custom scrollbar */
+/* Hide scrollbar for webkit browsers */
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar - completely hidden */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
+  height: 0px;
+  background: transparent;
+  display: none;
 }
 
+/* Scrollbar completely hidden */
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #00ff88, #00d4ff);
-  border-radius: 4px;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #00d4ff, #8b5cf6);
+  display: none;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* For Internet Explorer and Edge */
+body {
+  -ms-overflow-style: none;
 }
 
 /* Neon glow utilities */
@@ -79,12 +102,20 @@ body {
   text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 15px #00ff88, 0 0 20px #00ff88;
 }
 
-.glow-border {
-  box-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 15px #00ff88, 0 0 20px #00ff88;
+.glow-text-subtle {
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.6), 0 0 12px rgba(0, 255, 136, 0.3);
 }
 
-.glow-blue {
-  text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 15px #00d4ff;
+.glow-white {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.shadow-neon-subtle {
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.5), 0 0 16px rgba(0, 255, 136, 0.3), 0 0 24px rgba(0, 255, 136, 0.1);
+}
+
+.glow-border {
+  box-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 15px #00ff88, 0 0 20px #00ff88;
 }
 
 .cyber-button {

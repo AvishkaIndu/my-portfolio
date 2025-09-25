@@ -49,33 +49,54 @@ export default function Navbar() {
   }
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-cyber-dark/90 backdrop-blur-md border-b border-cyber-green/20 shadow-neon'
-          : 'bg-transparent'
-      )}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex-shrink-0"
-          >
-            <h1 className="text-2xl font-bold font-mono glow-text cursor-pointer">
-              &lt;DEV/&gt;
-            </h1>
-          </motion.div>
-
+    <div className="fixed top-2 xs:top-3 sm:top-4 left-0 right-0 z-50 flex justify-center px-2 xs:px-3 sm:px-4">
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className={cn(
+          'transition-all duration-300 rounded-full',
+          'px-2 py-1.5 xs:px-3 xs:py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 lg:px-6 lg:py-4',
+          'w-auto max-w-full',
+          isScrolled
+            ? 'backdrop-blur-md bg-cyber-dark/20 border border-cyber-green/10'
+            : 'bg-transparent'
+        )}
+      >
+        <div className="flex items-center justify-center w-full overflow-hidden">
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item, index) => (
+          <div className="hidden sm:flex items-center justify-center space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4 xl:space-x-6 flex-nowrap whitespace-nowrap">
+            {navItems.map((item, index) => (
+              <motion.button
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                onClick={() => scrollToSection(item.href)}
+                className={cn(
+                  'px-1 py-1 sm:px-2 sm:py-1.5 md:px-3 md:py-2 lg:px-4 lg:py-2',
+                  'text-[10px] sm:text-xs md:text-sm lg:text-base',
+                  'font-medium transition-all duration-300',
+                  'relative group rounded-full whitespace-nowrap flex-shrink-0',
+                  activeSection === item.href.substring(1)
+                    ? 'text-cyber-green glow-text-subtle bg-cyber-green/5'
+                    : 'text-white hover:text-cyber-green hover:bg-cyber-green/5'
+                )}
+              >
+                {item.name}
+              </motion.button>
+            ))}
+          </div>
+
+          {/* Mobile Navigation - Compact Single Line */}
+          <div className="sm:hidden flex items-center justify-center space-x-1 flex-nowrap whitespace-nowrap overflow-x-auto max-w-full">
+            {navItems.map((item, index) => {
+              const shortName = item.name === 'About' ? 'Abt' :
+                              item.name === 'Skills' ? 'Skl' :
+                              item.name === 'Projects' ? 'Prj' :
+                              item.name === 'Contact' ? 'Con' :
+                              item.name.slice(0, 3)
+              return (
                 <motion.button
                   key={item.name}
                   initial={{ opacity: 0, y: -20 }}
@@ -83,48 +104,27 @@ export default function Navbar() {
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
                   className={cn(
-                    'px-3 py-2 text-sm font-medium transition-all duration-300 relative group',
+                    'px-1.5 py-1 text-[9px] font-medium transition-all duration-300',
+                    'relative group rounded-full whitespace-nowrap flex-shrink-0 min-w-0',
                     activeSection === item.href.substring(1)
-                      ? 'text-cyber-green glow-text'
-                      : 'text-white hover:text-cyber-green'
+                      ? 'text-cyber-green glow-text-subtle bg-cyber-green/5'
+                      : 'text-white hover:text-cyber-green hover:bg-cyber-green/5'
                   )}
                 >
-                  {item.name}
-                  <span
-                    className={cn(
-                      'absolute bottom-0 left-0 h-0.5 bg-cyber-green transition-all duration-300',
-                      activeSection === item.href.substring(1)
-                        ? 'w-full shadow-neon'
-                        : 'w-0 group-hover:w-full'
-                    )}
-                  />
+                  {shortName}
                 </motion.button>
-              ))}
-            </div>
+              )
+            })}
           </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-cyber-green hover:text-white p-2 transition-colors"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
+        </div>      {/* Mobile Navigation */}
       {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-cyber-dark/95 backdrop-blur-md border-b border-cyber-green/20"
+          className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 md:hidden bg-cyber-dark/95 backdrop-blur-md rounded-2xl border border-cyber-green/10"
         >
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="px-4 py-3 space-y-1">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -133,9 +133,9 @@ export default function Navbar() {
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.href)}
                 className={cn(
-                  'block w-full text-left px-3 py-2 text-base font-medium transition-all duration-300',
+                  'block w-full text-center px-3 py-2 text-sm font-medium transition-all duration-300 rounded-full',
                   activeSection === item.href.substring(1)
-                    ? 'text-cyber-green glow-text bg-cyber-green/10'
+                    ? 'text-cyber-green glow-text-subtle bg-cyber-green/10'
                     : 'text-white hover:text-cyber-green hover:bg-cyber-green/5'
                 )}
               >
@@ -146,5 +146,6 @@ export default function Navbar() {
         </motion.div>
       )}
     </motion.nav>
+    </div>
   )
 }

@@ -12,31 +12,49 @@ export default function BackgroundAnimation() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    // Matrix rain animation variables
+    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン'
+    const charArray = chars.split('')
+    const fontSize = 14
+    let columns = Math.floor(window.innerWidth / fontSize)
+    const drops: number[] = []
+
+    // Initialize drops function
+    const initializeDrops = () => {
+      columns = Math.floor(window.innerWidth / fontSize)
+      drops.length = columns
+      for (let i = 0; i < columns; i++) {
+        drops[i] = Math.random() * window.innerHeight
+      }
+    }
+
     // Set canvas size
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      const rect = canvas.getBoundingClientRect()
+      const dpr = window.devicePixelRatio || 1
+      
+      canvas.width = window.innerWidth * dpr
+      canvas.height = window.innerHeight * dpr
+      
+      canvas.style.width = window.innerWidth + 'px'
+      canvas.style.height = window.innerHeight + 'px'
+      
+      ctx.scale(dpr, dpr)
+      
+      // Reinitialize drops when canvas resizes
+      initializeDrops()
     }
 
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    // Matrix rain animation
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン'
-    const charArray = chars.split('')
-    const fontSize = 14
-    const columns = Math.floor(canvas.width / fontSize)
-    const drops: number[] = []
-
-    // Initialize drops
-    for (let i = 0; i < columns; i++) {
-      drops[i] = Math.random() * canvas.height
-    }
+    // Initialize drops for the first time
+    initializeDrops()
 
     const draw = () => {
       // Create fade effect
       ctx.fillStyle = 'rgba(10, 10, 10, 0.05)'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
 
       ctx.fillStyle = '#00ff88'
       ctx.font = `${fontSize}px monospace`
@@ -51,7 +69,7 @@ export default function BackgroundAnimation() {
         ctx.fillText(char, x, y)
 
         // Reset drop randomly
-        if (y > canvas.height && Math.random() > 0.975) {
+        if (y > window.innerHeight && Math.random() > 0.975) {
           drops[i] = 0
         }
 
@@ -72,14 +90,22 @@ export default function BackgroundAnimation() {
       {/* Matrix Canvas */}
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-30"
+        className="fixed top-0 left-0 w-screen h-screen pointer-events-none z-0 opacity-30"
+        style={{
+          width: '100vw',
+          height: '100vh',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          zIndex: 0
+        }}
       />
       
       {/* Cyber Grid Overlay */}
-      <div className="fixed inset-0 matrix-bg pointer-events-none z-0 opacity-20" />
+      <div className="fixed top-0 left-0 w-screen h-screen matrix-bg pointer-events-none z-0 opacity-20" />
       
       {/* Gradient Overlays */}
-      <div className="fixed inset-0 bg-gradient-to-br from-cyber-green/5 via-transparent to-cyber-blue/5 pointer-events-none z-0" />
+      <div className="fixed top-0 left-0 w-screen h-screen bg-gradient-to-br from-cyber-green/5 via-transparent to-cyber-blue/5 pointer-events-none z-0" />
       
       {/* Animated Glow Spots */}
       <div className="fixed top-20 left-20 w-96 h-96 bg-cyber-green/10 rounded-full blur-3xl animate-pulse pointer-events-none z-0" />

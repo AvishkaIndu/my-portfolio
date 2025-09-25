@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { ArrowDown, Download, Mail, Github, Linkedin } from 'lucide-react'
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function Hero() {
   const [imageLoaded, setImageLoaded] = useState(false)
@@ -50,20 +51,20 @@ export default function Hero() {
             </motion.h2>
 
             {/* Main Title */}
-            <div className="space-y-4">
+            <div className="space-y-6 flex flex-col items-center">
               <motion.h1
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-                className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white"
+                className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white text-center whitespace-nowrap"
               >
-                <span className="glitch-effect glow-text" data-text="[Your Name]">
-                  [Your Name]
+                <span className="text-cyber-green glow-text-subtle">
+                  Avishka Induwara
                 </span>
               </motion.h1>
 
               {/* Typewriter Effect */}
-              <div className="text-xl sm:text-2xl lg:text-3xl font-mono text-cyber-blue min-h-[2.5rem]">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-mono text-white min-h-[2.5rem] text-center">
                 <TypeAnimation
                   sequence={[
                     'Full-Stack Developer',
@@ -80,7 +81,8 @@ export default function Hero() {
                   wrapper="span"
                   speed={50}
                   repeat={Infinity}
-                  className="glow-blue"
+                  className="text-white glow-white"
+                  style={{ color: '#ffffff' }}
                 />
               </div>
             </div>
@@ -88,7 +90,7 @@ export default function Hero() {
             {/* Subtitle */}
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 "
             >
               Building scalable web applications with{' '}
               <span className="text-cyber-green font-semibold">Next.js</span>,{' '}
@@ -99,24 +101,24 @@ export default function Hero() {
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 justify-center"
             >
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="cyber-button px-8 py-4 font-semibold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                className="cyber-button px-6 py-3 font-medium text-base rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>View My Work</span>
-                <ArrowDown size={20} className="animate-bounce" />
+                <ArrowDown size={18} className="animate-bounce" />
               </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/10 px-8 py-4 font-semibold text-lg rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                className="border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/10 px-6 py-3 font-medium text-base rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
               >
-                <Download size={20} />
+                <Download size={18} />
                 <span>Download CV</span>
               </motion.button>
             </motion.div>
@@ -124,7 +126,7 @@ export default function Hero() {
             {/* Social Links */}
             <motion.div
               variants={itemVariants}
-              className="flex justify-center lg:justify-start space-x-6"
+              className="flex justify-center space-x-6"
             >
               {[
                 { icon: Github, href: '#', label: 'GitHub' },
@@ -148,25 +150,25 @@ export default function Hero() {
           {/* Profile Image */}
           <motion.div
             variants={itemVariants}
-            className="relative order-first lg:order-last"
+            className="relative order-first lg:order-last flex justify-center lg:justify-end"
           >
-            <div className="relative w-80 h-80 mx-auto">
+            <div className="relative w-96 h-96 lg:w-[28rem] lg:h-[28rem]">
               {/* Outer Glow Ring */}
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border border-cyber-green/30 shadow-neon"
+                className="absolute inset-0 rounded-full border border-cyber-green/30 shadow-neon-subtle"
               />
               
               {/* Middle Ring */}
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-2 rounded-full border border-cyber-blue/20"
+                className="absolute inset-0 rounded-full border border-cyber-blue/20"
               />
 
               {/* Inner Container */}
-              <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-br from-cyber-green/10 to-cyber-blue/10 backdrop-blur-sm">
+              <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-cyber-green/10 to-cyber-blue/10 backdrop-blur-sm">
                 {/* Scan Line Effect */}
                 <div className="scanline absolute inset-0 rounded-full" />
                 
@@ -179,22 +181,30 @@ export default function Hero() {
                   }}
                   transition={{ duration: 0.6 }}
                   className="relative w-full h-full rounded-full overflow-hidden"
+                  style={{ clipPath: 'circle(50%)' }}
                 >
-                  {/* Placeholder for profile image */}
-                  <div className="w-full h-full bg-gradient-to-br from-cyber-gray to-cyber-dark flex items-center justify-center">
-                    <div className="text-6xl font-mono text-cyber-green/50">
-                      &lt;/&gt;
+                  {/* Show placeholder only when image hasn't loaded */}
+                  {!imageLoaded && (
+                    <div className="absolute inset-0 w-full h-full rounded-full bg-gradient-to-br from-cyber-gray to-cyber-dark flex items-center justify-center">
+                      <div className="text-6xl font-mono text-cyber-green/50">
+                        &lt;/&gt;
+                      </div>
                     </div>
-                  </div>
+                  )}
                   
-                  {/* Uncomment and replace with your actual image */}
-                  {/* <Image
-                    src="/your-photo.jpg"
-                    alt="Your Name"
+                  {/* Your photo - Replace "/your-photo.jpg" with your actual photo path */}
+                  <Image
+                    src="/avishka.jpg"
+                    alt="Avishka Induwara - Portfolio Photo"
                     fill
-                    className="object-cover"
+                    className={`object-cover rounded-full transition-opacity duration-500 ${
+                      imageLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}
                     onLoad={() => setImageLoaded(true)}
-                  /> */}
+                    onError={() => setImageLoaded(false)}
+                    priority
+                    sizes="(max-width: 768px) 300px, 400px"
+                  />
                   
                   {/* Glitch Overlay */}
                   <motion.div
@@ -206,10 +216,10 @@ export default function Hero() {
               </div>
 
               {/* Corner Brackets */}
-              <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-cyber-green shadow-neon" />
-              <div className="absolute -top-2 -right-2 w-6 h-6 border-r-2 border-t-2 border-cyber-green shadow-neon" />
-              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-l-2 border-b-2 border-cyber-green shadow-neon" />
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-cyber-green shadow-neon" />
+              <div className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-cyber-green" />
+              <div className="absolute -top-2 -right-2 w-6 h-6 border-r-2 border-t-2 border-cyber-green" />
+              <div className="absolute -bottom-2 -left-2 w-6 h-6 border-l-2 border-b-2 border-cyber-green" />
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-cyber-green" />
 
               {/* Tech Stats Display */}
               <motion.div
@@ -229,24 +239,28 @@ export default function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
-          onClick={scrollToNext}
-        >
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-gray-400 font-mono">Scroll to explore</span>
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-cyber-green/50 rounded-full flex justify-center"
-            >
-              <div className="w-1 h-3 bg-cyber-green rounded-full mt-2 shadow-neon" />
-            </motion.div>
-          </div>
-        </motion.div>
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 right-0 flex justify-center px-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2, duration: 0.6 }}
+            className="cursor-pointer"
+            onClick={scrollToNext}
+          >
+            <div className="flex flex-col items-center space-y-1 sm:space-y-2">
+              <span className="text-xs sm:text-sm text-gray-400 font-mono text-center px-2">
+                Scroll to explore
+              </span>
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-4 h-6 sm:w-5 sm:h-8 md:w-6 md:h-10 border-2 border-cyber-green/50 rounded-full flex justify-center"
+              >
+                <div className="w-0.5 h-2 sm:w-0.5 sm:h-2.5 md:w-1 md:h-3 bg-cyber-green rounded-full mt-1 sm:mt-1.5 md:mt-2 shadow-neon" />
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   )
