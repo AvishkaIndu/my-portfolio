@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
-import { ArrowDown, Download, Mail, Github, Linkedin } from 'lucide-react'
+import { ArrowDown, Download, Mail, Github, Linkedin, Facebook, Instagram } from 'lucide-react'
 import { useState } from 'react'
 import Image from 'next/image'
 
@@ -30,16 +30,16 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-12 xs:pt-16 pb-8">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+        className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 items-center">
           {/* Text Content */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-6 xs:space-y-3 order-2 lg:order-1">
             {/* Greeting */}
             <motion.h2 
               className="text-lg sm:text-xl font-mono text-cyber-green glow-text"
@@ -51,12 +51,16 @@ export default function Hero() {
             </motion.h2>
 
             {/* Main Title */}
-            <div className="space-y-6 flex flex-col items-center">
+            <div className="space-y-4 sm:space-y-3 flex flex-col items-center">
               <motion.h1
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-                className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white text-center whitespace-nowrap"
+                className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-bold text-white text-center whitespace-nowrap"
+                style={{ 
+                  fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
+                  lineHeight: 1.1 
+                }}
               >
                 <span className="text-cyber-green glow-text-subtle">
                   Avishka Induwara
@@ -64,7 +68,7 @@ export default function Hero() {
               </motion.h1>
 
               {/* Typewriter Effect */}
-              <div className="text-xl sm:text-2xl lg:text-3xl font-mono text-white min-h-[2.5rem] text-center">
+              <div className="text-base xs:text-lg sm:text-xl lg:text-2xl xl:text-3xl font-mono text-white min-h-[2rem] sm:min-h-[5.5rem] text-center">
                 <TypeAnimation
                   sequence={[
                     'Full-Stack Developer',
@@ -82,7 +86,10 @@ export default function Hero() {
                   speed={50}
                   repeat={Infinity}
                   className="text-white glow-white"
-                  style={{ color: '#ffffff' }}
+                  style={{ 
+                    color: '#ffffff',
+                    fontSize: 'clamp(1rem, 4vw, 1.875rem)'
+                  }}
                 />
               </div>
             </div>
@@ -90,35 +97,40 @@ export default function Hero() {
             {/* Subtitle */}
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 "
+              className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-300 max-w-xl sm:max-w-2xl mx-auto lg:mx-0 px-4 sm:px-0"
             >
               Building scalable web applications with{' '}
               <span className="text-cyber-green font-semibold">Next.js</span>,{' '}
-              <span className="text-cyber-green font-semibold">Node.js</span>, and modern technologies.
-              Passionate about creating digital experiences that matter.
+              <span className="text-cyber-green font-semibold">React</span>,{' '}
+              <span className="text-cyber-green font-semibold">Node.js</span>,{' '}
+              <span className="text-cyber-green font-semibold">TypeScript</span>, and modern cloud technologies.
+              <br className="hidden xs:block" />
+              Experienced in databases, APIs, and deployment solutions.
+              <br className="hidden xs:block" />
+              Passionate about innovation.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-3 justify-center"
+              className="flex flex-col xs:flex-row gap-2 xs:gap-3 justify-center px-4 sm:px-0"
             >
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="cyber-button px-6 py-3 font-medium text-base rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                className="cyber-button px-4 xs:px-6 py-2 xs:py-3 font-medium text-sm xs:text-base rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>View My Work</span>
-                <ArrowDown size={18} className="animate-bounce" />
+                <ArrowDown size={16} className="animate-bounce" />
               </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-cyber-blue text-cyber-blue hover:bg-cyber-blue/10 px-6 py-3 font-medium text-base rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                className="border border-white text-white hover:bg-white/10 px-4 xs:px-6 py-2 xs:py-3 font-medium text-sm xs:text-base rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
               >
-                <Download size={18} />
+                <Download size={16} />
                 <span>Download CV</span>
               </motion.button>
             </motion.div>
@@ -126,33 +138,61 @@ export default function Hero() {
             {/* Social Links */}
             <motion.div
               variants={itemVariants}
-              className="flex justify-center space-x-6"
+              className="flex flex-col items-center space-y-4 relative z-20"
             >
-              {[
-                { icon: Github, href: '#', label: 'GitHub' },
-                { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' }
-              ].map(({ icon: Icon, href, label }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="text-gray-400 hover:text-cyber-green transition-all duration-300 p-2 rounded-full border border-transparent hover:border-cyber-green/50 hover:shadow-neon"
-                  aria-label={label}
-                >
-                  <Icon size={24} />
-                </motion.a>
-              ))}
+              {/* First row - GitHub, LinkedIn, Email */}
+              <div className="flex justify-center space-x-6">
+                {[
+                  { icon: Github, href: 'https://github.com/AvishkaIndu', label: 'GitHub' },
+                  { icon: Linkedin, href: 'https://linkedin.com/in/avishka-induwara', label: 'LinkedIn' },
+                  { icon: Mail, href: 'mailto:avishkainduwara@example.com', label: 'Email' }
+                ].map(({ icon: Icon, href, label }) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    target={href.startsWith('mailto:') ? '_self' : '_blank'}
+                    rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                    whileHover={{ scale: 1.2, y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="text-gray-400 hover:text-cyber-green transition-all duration-300 p-3 rounded-full border border-transparent hover:border-cyber-green/50 hover:shadow-neon relative z-30 block"
+                    aria-label={label}
+                    style={{ touchAction: 'manipulation' }}
+                  >
+                    <Icon size={24} />
+                  </motion.a>
+                ))}
+              </div>
+
+              {/* Second row - Facebook, Instagram */}
+              <div className="flex justify-center space-x-6">
+                {[
+                  { icon: Facebook, href: 'https://facebook.com/avishka.induwara', label: 'Facebook' },
+                  { icon: Instagram, href: 'https://instagram.com/avishka_induwara', label: 'Instagram' }
+                ].map(({ icon: Icon, href, label }) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="text-gray-400 hover:text-cyber-green transition-all duration-300 p-3 rounded-full border border-transparent hover:border-cyber-green/50 hover:shadow-neon relative z-30 block"
+                    aria-label={label}
+                    style={{ touchAction: 'manipulation' }}
+                  >
+                    <Icon size={24} />
+                  </motion.a>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
 
           {/* Profile Image */}
           <motion.div
             variants={itemVariants}
-            className="relative order-first lg:order-last flex justify-center lg:justify-end"
+            className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <div className="relative w-96 h-96 lg:w-[28rem] lg:h-[28rem]">
+            <div className="relative w-64 h-64 xs:w-80 xs:h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem]">
               {/* Outer Glow Ring */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -168,7 +208,7 @@ export default function Hero() {
               />
 
               {/* Inner Container */}
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-gradient-to-br from-cyber-green/10 to-cyber-blue/10 backdrop-blur-sm">
+              <div className="absolute inset-1 xs:inset-2 rounded-full overflow-hidden bg-gradient-to-br from-cyber-green/10 to-cyber-blue/10 backdrop-blur-sm">
                 {/* Scan Line Effect */}
                 <div className="scanline absolute inset-0 rounded-full" />
                 
@@ -221,17 +261,49 @@ export default function Hero() {
               <div className="absolute -bottom-2 -left-2 w-6 h-6 border-l-2 border-b-2 border-cyber-green" />
               <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-cyber-green" />
 
-              {/* Tech Stats Display */}
+              {/* Tech Stats Display - Console Style */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.5, duration: 0.6 }}
-                className="absolute -right-4 top-4 bg-cyber-dark/80 border border-cyber-green/30 rounded-lg p-3 backdrop-blur-sm"
+                className="absolute -right-1 xs:-right-0 -top-1 xs:top-0 bg-black/90 border border-cyber-green/50 rounded-md px-3 py-2 backdrop-blur-sm shadow-lg min-w-[120px] xs:min-w-[140px]"
               >
-                <div className="font-mono text-xs text-cyber-green space-y-1">
-                  <div>Status: <span className="text-white">Active</span></div>
-                  <div>Projects: <span className="text-white">15+</span></div>
-                  <div>Experience: <span className="text-white">3+ Years</span></div>
+                {/* Console Header */}
+                <div className="flex items-center justify-between mb-1 pb-1 border-b border-cyber-green/30">
+                  <div className="flex space-x-0.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                  </div>
+                  <span className="font-mono text-[7px] xs:text-[8px] text-cyber-green/70">terminal</span>
+                </div>
+                
+                {/* Console Content - Horizontal Layout */}
+                <div className="font-mono text-[8px] xs:text-[9px] text-cyber-green text-left">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <span className="text-cyber-green">$</span> 
+                      <span className="text-white ml-0.5">status:</span>
+                      <span className="text-white ml-1 text-[7px] xs:text-[8px]">Active</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-between mt-0.5">
+                    <div className="flex items-center">
+                      <span className="text-cyber-green">$</span> 
+                      <span className="text-white ml-0.5">projects:</span>
+                      <span className="text-white ml-1 text-[7px] xs:text-[8px]">15+</span>
+                    </div>
+                    <div className="hidden xs:flex items-center ml-2">
+                      <span className="text-white">exp:</span>
+                      <span className="text-white ml-1 text-[7px] xs:text-[8px]">3y+</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center mt-0.5">
+                    <span className="text-cyber-green animate-pulse">$</span> 
+                    <span className="text-white ml-0.5 animate-pulse">_</span>
+                  </div>
                 </div>
               </motion.div>
             </div>

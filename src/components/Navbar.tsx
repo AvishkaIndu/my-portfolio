@@ -89,35 +89,30 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Navigation - Compact Single Line */}
-          <div className="sm:hidden flex items-center justify-center space-x-1 flex-nowrap whitespace-nowrap overflow-x-auto max-w-full">
-            {navItems.map((item, index) => {
-              const shortName = item.name === 'About' ? 'Abt' :
-                              item.name === 'Skills' ? 'Skl' :
-                              item.name === 'Projects' ? 'Prj' :
-                              item.name === 'Contact' ? 'Con' :
-                              item.name.slice(0, 3)
-              return (
-                <motion.button
-                  key={item.name}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.href)}
-                  className={cn(
-                    'px-1.5 py-1 text-[9px] font-medium transition-all duration-300',
-                    'relative group rounded-full whitespace-nowrap flex-shrink-0 min-w-0',
-                    activeSection === item.href.substring(1)
-                      ? 'text-cyber-green glow-text-subtle bg-cyber-green/5'
-                      : 'text-white hover:text-cyber-green hover:bg-cyber-green/5'
-                  )}
-                >
-                  {shortName}
-                </motion.button>
-              )
-            })}
+          <div className="sm:hidden flex items-center justify-center space-x-0.5 xs:space-x-1 flex-nowrap whitespace-nowrap overflow-x-visible max-w-full">
+            {navItems.map((item, index) => (
+              <motion.button
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                onClick={() => scrollToSection(item.href)}
+                className={cn(
+                  'px-1 xs:px-1.5 py-0.5 xs:py-1 text-[8px] xs:text-[9px] font-medium transition-all duration-300',
+                  'relative group rounded-full whitespace-nowrap flex-shrink-0 min-w-0',
+                  activeSection === item.href.substring(1)
+                    ? 'text-cyber-green glow-text-subtle bg-cyber-green/5'
+                    : 'text-white hover:text-cyber-green hover:bg-cyber-green/5'
+                )}
+              >
+                {item.name}
+              </motion.button>
+            ))}
           </div>
-        </div>      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
