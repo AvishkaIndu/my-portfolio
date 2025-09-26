@@ -49,8 +49,8 @@ A modern, cyberpunk-themed portfolio website built for software engineering unde
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/cyberpunk-portfolio.git
-   cd cyberpunk-portfolio
+   git clone https://github.com/AvishkaIndu/my-portfolio.git
+   cd my-portfolio
    ```
 
 2. **Install dependencies**
@@ -259,6 +259,6 @@ If you need help customizing this portfolio or have any questions:
 
 ---
 
-**Made with ❤️ and ☕ by [Your Name]**
+**Made with ❤️ and ☕ by Avishka Induwara**
 
 ⭐ If this project helped you, please give it a star!

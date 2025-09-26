@@ -66,10 +66,10 @@ export default function About() {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              <span className="glow-text">About</span>{' '}
-              <span className="text-cyber-blue">Me</span>
+              <span className="glow-text-subtle">About</span>{' '}
+              <span className="text-cyber-green">Me</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyber-green to-cyber-blue mx-auto shadow-neon" />
+            <div className="w-24 h-0.5 bg-cyber-green mx-auto shadow-neon" />
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Passionate about creating digital experiences that solve real-world problems
             </p>

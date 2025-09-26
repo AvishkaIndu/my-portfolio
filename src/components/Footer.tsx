@@ -45,7 +45,7 @@ export default function Footer() {
             className="flex items-center justify-center space-x-4 text-xs text-cyber-green font-mono"
           >
             <span className="glow-text">
-              © {currentYear} [Your Name] | Full-Stack Developer
+              © {currentYear} Avishka Induwara | Full-Stack Developer
             </span>
           </motion.div>
           

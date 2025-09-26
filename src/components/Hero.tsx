@@ -138,14 +138,14 @@ export default function Hero() {
             {/* Social Links */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col items-center space-y-4 relative z-20"
+              className="flex flex-col items-center space-y-4 relative z-50"
             >
               {/* First row - GitHub, LinkedIn, Email */}
-              <div className="flex justify-center space-x-6">
+              <div className="flex justify-center space-x-6 relative z-50">
                 {[
                   { icon: Github, href: 'https://github.com/AvishkaIndu', label: 'GitHub' },
-                  { icon: Linkedin, href: 'https://linkedin.com/in/avishka-induwara', label: 'LinkedIn' },
-                  { icon: Mail, href: 'mailto:avishkainduwara@example.com', label: 'Email' }
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/avishka-induwara-822386310/', label: 'LinkedIn' },
+                  { icon: Mail, href: 'mailto:avishkaindu2003@gmail.com', label: 'Email' }
                 ].map(({ icon: Icon, href, label }) => (
                   <motion.a
                     key={label}
@@ -154,9 +154,9 @@ export default function Hero() {
                     rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                     whileHover={{ scale: 1.2, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="text-gray-400 hover:text-cyber-green transition-all duration-300 p-3 rounded-full border border-transparent hover:border-cyber-green/50 hover:shadow-neon relative z-30 block"
+                    className="text-gray-400 hover:text-cyber-green transition-all duration-300 p-3 rounded-full border border-transparent hover:border-cyber-green/50 hover:shadow-neon relative z-50 block cursor-pointer"
                     aria-label={label}
-                    style={{ touchAction: 'manipulation' }}
+                    style={{ touchAction: 'manipulation', pointerEvents: 'auto' }}
                   >
                     <Icon size={24} />
                   </motion.a>
@@ -164,10 +164,10 @@ export default function Hero() {
               </div>
 
               {/* Second row - Facebook, Instagram */}
-              <div className="flex justify-center space-x-6">
+              <div className="flex justify-center space-x-6 relative z-50">
                 {[
-                  { icon: Facebook, href: 'https://facebook.com/avishka.induwara', label: 'Facebook' },
-                  { icon: Instagram, href: 'https://instagram.com/avishka_induwara', label: 'Instagram' }
+                  { icon: Facebook, href: 'https://web.facebook.com/avishka.indu', label: 'Facebook' },
+                  { icon: Instagram, href: 'https://www.instagram.com/avishka_indu/', label: 'Instagram' }
                 ].map(({ icon: Icon, href, label }) => (
                   <motion.a
                     key={label}
@@ -176,9 +176,9 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.2, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="text-gray-400 hover:text-cyber-green transition-all duration-300 p-3 rounded-full border border-transparent hover:border-cyber-green/50 hover:shadow-neon relative z-30 block"
+                    className="text-gray-400 hover:text-cyber-green transition-all duration-300 p-3 rounded-full border border-transparent hover:border-cyber-green/50 hover:shadow-neon relative z-50 block cursor-pointer"
                     aria-label={label}
-                    style={{ touchAction: 'manipulation' }}
+                    style={{ touchAction: 'manipulation', pointerEvents: 'auto' }}
                   >
                     <Icon size={24} />
                   </motion.a>

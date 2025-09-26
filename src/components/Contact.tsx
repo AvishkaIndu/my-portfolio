@@ -10,6 +10,8 @@ import {
   Github, 
   Linkedin, 
   Twitter, 
+  Instagram,
+  Facebook,
   MessageSquare,
   Clock,
   CheckCircle,
@@ -33,8 +35,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'your.email@example.com',
-    href: 'mailto:your.email@example.com',
+    value: 'avishkaindu2003@gmail.com',
+    href: 'mailto:avishkaindu2003@gmail.com',
     description: 'Send me an email anytime'
   },
   {
@@ -64,14 +66,14 @@ const socialLinks = [
   {
     name: 'GitHub',
     icon: Github,
-    href: 'https://github.com/yourusername',
+    href: 'https://github.com/AvishkaIndu',
     color: 'hover:text-gray-300',
     description: 'Check out my code'
   },
   {
     name: 'LinkedIn',
     icon: Linkedin,
-    href: 'https://linkedin.com/in/yourprofile',
+    href: 'https://www.linkedin.com/in/avishka-induwara-822386310/',
     color: 'hover:text-blue-400',
     description: 'Connect professionally'
   },
@@ -81,6 +83,20 @@ const socialLinks = [
     href: 'https://twitter.com/yourusername',
     color: 'hover:text-blue-400',
     description: 'Follow my updates'
+  },
+  {
+    name: 'Instagram',
+    icon: Instagram,
+    href: 'https://www.instagram.com/avishka_indu/',
+    color: 'hover:text-pink-400',
+    description: 'Follow my journey'
+  },
+  {
+    name: 'Facebook',
+    icon: Facebook,
+    href: 'https://web.facebook.com/avishka.indu',
+    color: 'hover:text-blue-600',
+    description: 'Connect on Facebook'
   },
 ]
 
@@ -148,10 +164,10 @@ export default function Contact() {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              <span className="glow-text">Get In</span>{' '}
-              <span className="text-cyber-blue">Touch</span>
+              <span className="glow-text-subtle">Get In</span>{' '}
+              <span className="text-cyber-green">Touch</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyber-green to-cyber-blue mx-auto shadow-neon" />
+            <div className="w-24 h-0.5 bg-cyber-green mx-auto shadow-neon" />
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Let&apos;s discuss your next project or just say hello. I&apos;m always excited to work on new challenges.
             </p>
@@ -195,7 +211,7 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         className="cyber-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-cyber-green/50 transition-all"
-                        placeholder="your.email@example.com"
+                        placeholder="avishkaindu2003@gmail.com"
                       />
                     </div>
                   </div>
@@ -329,7 +345,7 @@ export default function Contact() {
                             </h4>
                             <p className="text-gray-300 font-mono">
                               {info.href.startsWith('mailto:') || info.href.startsWith('tel:') ? (
-                                <a href={info.href} className="hover:text-cyber-green transition-colors">
+                                <a href={info.href} className="hover:text-cyber-green transition-colors cursor-pointer relative z-50" style={{ pointerEvents: 'auto' }}>
                                   {info.value}
                                 </a>
                               ) : (

@@ -44,7 +44,7 @@ const projects: Project[] = [
     category: 'fullstack',
     image: '/projects/ecommerce.jpg',
     demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/username/ecommerce',
+    githubUrl: 'https://github.com/AvishkaIndu/ecommerce',
     featured: true,
     status: 'completed',
     year: '2024',
@@ -65,7 +65,7 @@ const projects: Project[] = [
     category: 'web',
     image: '/projects/taskmanager.jpg',
     demoUrl: 'https://tasks.example.com',
-    githubUrl: 'https://github.com/username/taskmanager',
+    githubUrl: 'https://github.com/AvishkaIndu/taskmanager',
     featured: true,
     status: 'completed',
     year: '2023',
@@ -86,7 +86,7 @@ const projects: Project[] = [
     category: 'web',
     image: '/projects/weather.jpg',
     demoUrl: 'https://weather.example.com',
-    githubUrl: 'https://github.com/username/weather',
+    githubUrl: 'https://github.com/AvishkaIndu/weather',
     featured: false,
     status: 'completed',
     year: '2023',
@@ -106,7 +106,7 @@ const projects: Project[] = [
     technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Cloudinary', 'Socket.io'],
     category: 'api',
     image: '/projects/social-api.jpg',
-    githubUrl: 'https://github.com/username/social-api',
+    githubUrl: 'https://github.com/AvishkaIndu/social-api',
     featured: false,
     status: 'completed',
     year: '2023',
@@ -127,7 +127,7 @@ const projects: Project[] = [
     category: 'web',
     image: '/projects/portfolio-v2.jpg',
     demoUrl: 'https://portfolio-v2.example.com',
-    githubUrl: 'https://github.com/username/portfolio-v2',
+    githubUrl: 'https://github.com/AvishkaIndu/portfolio-v2',
     featured: true,
     status: 'in-progress',
     year: '2024',
@@ -148,7 +148,7 @@ const projects: Project[] = [
     category: 'fullstack',
     image: '/projects/ai-chat.jpg',
     demoUrl: 'https://ai-chat.example.com',
-    githubUrl: 'https://github.com/username/ai-chat',
+    githubUrl: 'https://github.com/AvishkaIndu/ai-chat',
     featured: false,
     status: 'planned',
     year: '2024',
@@ -229,10 +229,10 @@ export default function Projects() {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              <span className="glow-text">My</span>{' '}
-              <span className="text-cyber-blue">Projects</span>
+              <span className="glow-text-subtle">My</span>{' '}
+              <span className="text-cyber-green">Projects</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyber-green to-cyber-blue mx-auto shadow-neon" />
+            <div className="w-24 h-0.5 bg-cyber-green mx-auto shadow-neon" />
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               A showcase of my development journey and the solutions I&apos;ve built
             </p>
