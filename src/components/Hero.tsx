@@ -99,15 +99,15 @@ export default function Hero() {
               variants={itemVariants}
               className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-300 max-w-xl sm:max-w-2xl mx-auto lg:mx-0 px-4 sm:px-0"
             >
-              Building scalable web applications with{' '}
+              Building scalable and high-performance web applications with{' '}
               <span className="text-cyber-green font-semibold">Next.js</span>,{' '}
               <span className="text-cyber-green font-semibold">React</span>,{' '}
               <span className="text-cyber-green font-semibold">Node.js</span>,{' '}
-              <span className="text-cyber-green font-semibold">TypeScript</span>, and modern cloud technologies.
+              <span className="text-cyber-green font-semibold">Laravel</span>, and modern cloud technologies.
               <br className="hidden xs:block" />
-              Experienced in databases, APIs, and deployment solutions.
+              Skilled in designing efficient databases, crafting secure APIs, and delivering seamless deployment solutions.
               <br className="hidden xs:block" />
-              Passionate about innovation.
+              Passionate about innovation, problem-solving, and bringing creative ideas to life through software engineering.
             </motion.p>
 
             {/* CTA Buttons */}
