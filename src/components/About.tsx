@@ -12,24 +12,38 @@ const stats = [
 
 const journey = [
   {
-    year: '2020-2024',
-    title: 'Software Engineering Degree',
-    subtitle: 'University of Technology',
-    description: 'Specialized in full-stack development, data structures, algorithms, and software architecture.',
+    year: 'Jun 2023 – Jan 2028',
+    title: 'Bachelor of Information Communication Technology - BICT',
+    subtitle: 'University of Sri Jayewardenepura',
+    description: 'Information Technology specialization, focusing on software engineering principles and modern development practices.',
     type: 'education'
   },
   {
-    year: '2022-2023',
-    title: 'Frontend Developer Intern',
-    subtitle: 'Tech Startup Inc.',
-    description: 'Built responsive web applications using React, TypeScript, and modern CSS frameworks.',
+    year: 'Mar 2022 – Nov 2022',
+    title: 'Diploma in English',
+    subtitle: 'ESOFT Metro Campus',
+    description: 'English Language and Literature studies, enhancing communication and analytical skills.',
+    type: 'education'
+  },
+  {
+    year: 'Oct 2023 - May 2025',
+    title: 'Member',
+    subtitle: 'Gavel Club of University of Sri Jayewardenepura',
+    description: 'Active member developing leadership, public speaking, and communication skills through club activities.',
     type: 'experience'
   },
   {
-    year: '2023-Present',
-    title: 'Full-Stack Developer',
-    subtitle: 'Digital Agency Co.',
-    description: 'Leading development of enterprise applications with Next.js, Node.js, and cloud technologies.',
+    year: 'Jun 2024 - Jan 2025',
+    title: 'Graphic Designer',
+    subtitle: 'CoDeKu DevOps Academy · Part-time',
+    description: 'Designed social media posts and brand logo to support brand identity and online presence. Created simple, modern designs for tech-focused content.',
+    type: 'experience'
+  },
+  {
+    year: 'Feb 2022 - Aug 2024',
+    title: 'Freelance Graphic Designer',
+    subtitle: 'Fiverr · Part-time',
+    description: 'Work as a freelance graphic and logo designer, delivering custom designs for clients worldwide. Focus on clean, creative visuals tailored to each brand\'s identity and goals.',
     type: 'experience'
   },
 ]
@@ -87,31 +101,25 @@ export default function About() {
                   
                   <div className="space-y-4 text-gray-300 leading-relaxed">
                     <p>
-                      Hello! I&apos;m a passionate <span className="text-cyber-green font-semibold">Software Engineering undergraduate</span> 
-                      {' '}with a deep love for creating innovative web applications and solving complex problems through code.
+                      Hello! I&apos;m a passionate <span className="text-cyber-green font-semibold">Software Engineering undergraduate</span> at the <span className="text-cyber-blue font-semibold">University of Sri Jayewardenepura</span>, specializing in Software Engineering under the BICT degree program. I thrive on creating innovative web applications and tackling complex challenges through code.
                     </p>
                     
                     <p>
-                      My journey in software development began during my first year of university, where I discovered 
-                      the power of turning ideas into reality through programming. Since then, I&apos;ve been constantly 
-                      learning and exploring new technologies.
+                      My journey into software development started in my first year of university, where I realized the power of turning ideas into impactful digital solutions. Since then, I&apos;ve been exploring cutting-edge technologies, continuously expanding my expertise in full-stack development with frameworks like MERN, Next.js, React, and Laravel.
                     </p>
                     
                     <p>
-                      I specialize in <span className="text-cyber-blue font-semibold">full-stack development</span> with 
-                      expertise in modern JavaScript frameworks, backend technologies, and cloud platforms. I believe 
-                      in writing clean, maintainable code and creating user experiences that truly matter.
+                      I believe in writing clean, maintainable code, designing user-friendly experiences, and building software that makes a difference. Beyond coding, I enjoy exploring emerging technologies, contributing to open-source, and engaging with the developer community.
                     </p>
                     
                     <p>
-                      When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source 
-                      projects, or sharing knowledge with the developer community.
+                      Based in Sri Lanka, I&apos;m driven by curiosity, innovation, and the vision of building technology that empowers people.
                     </p>
                   </div>
 
                   <div className="flex items-center space-x-4 pt-4 border-t border-cyber-green/20">
                     <MapPin className="text-cyber-green" size={20} />
-                    <span className="text-gray-300">Based in [Your Location]</span>
+                    <span className="text-gray-300">Based in Colombo, Sri Lanka</span>
                   </div>
                 </div>
               </div>
@@ -131,7 +139,7 @@ export default function About() {
                       className="cyber-card p-6 rounded-lg text-center group cursor-pointer"
                     >
                       <Icon className="text-cyber-green mx-auto mb-2 group-hover:animate-pulse" size={24} />
-                      <div className="text-2xl font-bold text-white glow-text mb-1">
+                      <div className="text-2xl font-bold text-white mb-1">
                         {stat.value}
                       </div>
                       <div className="text-sm text-gray-400">{stat.label}</div>
