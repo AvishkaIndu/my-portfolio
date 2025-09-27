@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 import { Code2, GraduationCap, Award, Calendar, MapPin, Coffee } from 'lucide-react'
 
 const stats = [
-  { label: 'Years Experience', value: '3+', icon: Calendar },
-  { label: 'Projects Completed', value: '15+', icon: Code2 },
-  { label: 'Technologies', value: '20+', icon: Award },
-  { label: 'Coffee Consumed', value: '∞', icon: Coffee },
+  { label: 'Years Experience', value: '1+', icon: Calendar },
+  { label: 'Projects Completed', value: '5+', icon: Code2 },
+  { label: 'Technologies', value: '10+', icon: Award },
+  { label: 'Happy Clients', value: '25+', icon: Coffee },
 ]
 
 const journey = [
@@ -215,11 +215,11 @@ export default function About() {
             </h3>
             
             <p className="text-gray-300 text-lg max-w-4xl mx-auto leading-relaxed">
-              &quot;Code is not just about making things work – it&apos;s about crafting elegant solutions 
-              that are <span className="text-cyber-green font-semibold">scalable</span>, 
-              <span className="text-cyber-blue font-semibold"> maintainable</span>, and 
-              <span className="text-cyber-green font-semibold"> impactful</span>. 
-              Every line of code should serve a purpose and contribute to creating something meaningful.&quot;
+              &quot;For me, coding goes beyond functionality – it&apos;s about building solutions that are 
+              <span className="text-cyber-green font-semibold">efficient</span>, 
+              <span className="text-cyber-blue font-semibold">scalable</span>, and 
+              <span className="text-cyber-green font-semibold">sustainable</span>. 
+              I strive to write clean, purposeful code that not only solves problems but also adds long-term value and impact.&quot;
             </p>
           </motion.div>
         </motion.div>
