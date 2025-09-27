@@ -35,23 +35,23 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'avishkaindu2003@gmail.com',
-    href: 'mailto:avishkaindu2003@gmail.com',
+    value: 'avishkafvr@gmail.com',
+    href: 'mailto:avishkafvr@gmail.com',
     description: 'Send me an email anytime'
   },
   {
     icon: Phone,
     title: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
-    description: 'Available Mon-Fri 9AM-6PM'
+    value: '+94 74 297 8998',
+    href: 'tel:+94742978998',
+    description: 'Available 24 hours'
   },
   {
     icon: MapPin,
     title: 'Location',
     value: 'Colombo, Sri Lanka',
     href: '#',
-    description: 'Open to remote opportunities'
+    description: 'Open to physical and remote opportunities'
   },
   {
     icon: Clock,
@@ -211,7 +211,7 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         className="cyber-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-cyber-green/50 transition-all"
-                        placeholder="avishkaindu2003@gmail.com"
+                        placeholder="example@gmail.com"
                       />
                     </div>
                   </div>

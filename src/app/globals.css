@@ -252,3 +252,41 @@ body {
   75% { content: '...'; }
   100% { content: ''; }
 }
+
+/* Cyberpunk Skills Animations */
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-scan {
+  animation: scan 2s ease-in-out infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.cyber-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 30px rgba(0, 255, 136, 0.1),
+    0 0 20px rgba(0, 255, 136, 0.05),
+    inset 0 1px 0 rgba(0, 255, 136, 0.1);
+}
+
+.shadow-neon-sm {
+  box-shadow: 
+    0 0 10px rgba(0, 255, 136, 0.5),
+    0 0 20px rgba(0, 255, 136, 0.3),
+    0 0 30px rgba(0, 255, 136, 0.1);
+}
