@@ -34,9 +34,9 @@ export default function LoadingScreen() {
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-6xl font-mono text-cyber-green glow-text"
+          className="text-6xl font-mono text-cyber-green glow-text-medium"
         >
-          &lt;DEV/&gt;
+          &lt;Hi/&gt;
         </motion.div>
 
         {/* Loading Text */}

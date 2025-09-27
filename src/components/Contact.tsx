@@ -49,7 +49,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Location',
-    value: 'Your City, Country',
+    value: 'Colombo, Sri Lanka',
     href: '#',
     description: 'Open to remote opportunities'
   },
