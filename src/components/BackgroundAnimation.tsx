@@ -30,7 +30,6 @@ export default function BackgroundAnimation() {
 
     // Set canvas size
     const resizeCanvas = () => {
-      const rect = canvas.getBoundingClientRect()
       const dpr = window.devicePixelRatio || 1
       
       canvas.width = window.innerWidth * dpr

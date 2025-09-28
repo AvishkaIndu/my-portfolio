@@ -6,13 +6,10 @@ import {
   Braces, 
   Server, 
   Database, 
-  Cloud, 
-  Smartphone, 
   Code2, 
   GitBranch,
   Settings,
-  Globe,
-  Layers
+  Globe
 } from 'lucide-react'
 import { 
   SiJavascript, 
@@ -64,21 +61,6 @@ const skillCategories = [
     level: 82,
     description: 'Git, VS Code, Figma, Testing'
   },
-]
-
-const technologies = [
-  { name: 'JavaScript', icon: '🟨' },
-  { name: 'TypeScript', icon: '🔷' },
-  { name: 'React', icon: '⚛️' },
-  { name: 'Next.js', icon: '▲' },
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'Python', icon: '🐍' },
-  { name: 'MongoDB', icon: '🍃' },
-  { name: 'PostgreSQL', icon: '🐘' },
-  { name: 'Docker', icon: '🐳' },
-  { name: 'AWS', icon: '☁️' },
-  { name: 'Git', icon: '📱' },
-  { name: 'Tailwind', icon: '🎨' },
 ]
 
 export default function Skills() {

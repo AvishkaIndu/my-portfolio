@@ -129,7 +129,7 @@ export default function About() {
                 variants={itemVariants}
                 className="grid grid-cols-2 gap-4"
               >
-                {stats.map((stat, index) => {
+                {stats.map((stat) => {
                   const Icon = stat.icon
                   return (
                     <motion.div

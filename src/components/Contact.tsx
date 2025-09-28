@@ -122,15 +122,36 @@ export default function Contact() {
     e.preventDefault()
     setFormStatus({ type: 'loading', message: 'Sending message...' })
 
-    // Simulate form submission
-    setTimeout(() => {
-      // In a real application, you would send the data to your backend
-      setFormStatus({ 
-        type: 'success', 
-        message: 'Message sent successfully! I\'ll get back to you soon.' 
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 2000)
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setFormStatus({ 
+          type: 'success', 
+          message: 'Message sent successfully! I\'ll get back to you within 24 hours. Check your email for a confirmation.' 
+        })
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        setFormStatus({ 
+          type: 'error', 
+          message: data.error || 'Failed to send message. Please try again or contact me directly at avishkafvr@gmail.com' 
+        })
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      setFormStatus({ 
+        type: 'error', 
+        message: 'Network error. Please check your internet connection and try again, or contact me directly at avishkafvr@gmail.com' 
+      })
+    }
   }
 
   const containerVariants = {

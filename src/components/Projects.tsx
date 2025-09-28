@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import Image from 'next/image'
 import { 
   ExternalLink, 
   Github, 
@@ -216,9 +217,11 @@ export default function Projects() {
                     {/* Project Image */}
                     <div className="relative overflow-hidden">
                       <div className="aspect-video bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20 flex items-center justify-center">
-                        <img 
+                        <Image 
                           src={project.image} 
                           alt={project.title}
+                          width={400}
+                          height={225}
                           className="w-full h-full object-cover"
                         />
                       </div>
