@@ -73,7 +73,7 @@ export default function Hero() {
                   sequence={[
                     'Full-Stack Developer',
                     2000,
-                    'Software Engineer',
+                    'UI/UX enthusiast',
                     2000,
                     'Frontend Specialist',
                     2000,
@@ -292,11 +292,11 @@ export default function Hero() {
                     <div className="flex items-center">
                       <span className="text-cyber-green">$</span> 
                       <span className="text-white ml-0.5">projects:</span>
-                      <span className="text-white ml-1 text-[7px] xs:text-[8px]">15+</span>
+                      <span className="text-white ml-1 text-[7px] xs:text-[8px]">5+</span>
                     </div>
                     <div className="hidden xs:flex items-center ml-2">
                       <span className="text-white">exp:</span>
-                      <span className="text-white ml-1 text-[7px] xs:text-[8px]">3y+</span>
+                      <span className="text-white ml-1 text-[7px] xs:text-[8px]">2+</span>
                     </div>
                   </div>
                   

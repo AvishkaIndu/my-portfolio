@@ -4,10 +4,10 @@ import { motion } from 'framer-motion'
 import { Code2, GraduationCap, Award, Calendar, MapPin, Coffee } from 'lucide-react'
 
 const stats = [
-  { label: 'Years Experience', value: '1+', icon: Calendar },
+  { label: 'Years Experience', value: '2+', icon: Calendar },
   { label: 'Projects Completed', value: '5+', icon: Code2 },
   { label: 'Technologies', value: '10+', icon: Award },
-  { label: 'Happy Clients', value: '25+', icon: Coffee },
+  { label: 'Happy Clients', value: '5+', icon: Coffee },
 ]
 
 const journey = [

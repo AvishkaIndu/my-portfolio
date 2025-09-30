@@ -310,8 +310,8 @@ export default function Contact() {
 
               {/* Social Links */}
               <motion.div variants={cardVariants} className="cyber-card p-6 rounded-xl">
-                <h4 className="text-lg font-semibold text-white mb-4">Connect With Me</h4>
-                <div className="flex justify-center space-x-4">
+                <h4 className="text-lg font-semibold text-white mb-4 text-center">Connect With Me</h4>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3">
                   {socialLinks.map((social) => {
                     const Icon = social.icon
                     return (
@@ -320,13 +320,13 @@ export default function Contact() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        whileTap={{ scale: 0.9 }}
-                        className={`group flex flex-col items-center space-y-2 p-4 rounded-xl bg-cyber-gray/50 hover:bg-cyber-green/10 border border-cyber-green/20 hover:border-cyber-green/50 transition-all ${social.color}`}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`group flex flex-col items-center space-y-2 p-3 sm:p-4 rounded-xl bg-cyber-gray/50 hover:bg-cyber-green/10 border border-cyber-green/20 hover:border-cyber-green/50 transition-all ${social.color}`}
                         title={social.description}
                       >
-                        <Icon size={24} className="text-gray-400 group-hover:text-cyber-green transition-colors" />
-                        <span className="text-xs text-gray-400 group-hover:text-white transition-colors">
+                        <Icon size={20} className="sm:w-6 sm:h-6 text-gray-400 group-hover:text-cyber-green transition-colors" />
+                        <span className="text-xs text-gray-400 group-hover:text-white transition-colors text-center leading-tight">
                           {social.name}
                         </span>
                       </motion.a>
