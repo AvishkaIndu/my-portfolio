@@ -72,18 +72,18 @@ export default function Hero() {
                 <TypeAnimation
                   sequence={[
                     'Full-Stack Developer',
-                    2000,
+                    3000,
                     'UI/UX enthusiast',
-                    2000,
+                    3000,
                     'Frontend Specialist',
-                    2000,
+                    3000,
                     'Backend Developer',
-                    2000,
+                    3000,
                     'Problem Solver',
-                    2000,
+                    3000,
                   ]}
                   wrapper="span"
-                  speed={50}
+                  speed={30}
                   repeat={Infinity}
                   className="text-white glow-white"
                   style={{ 

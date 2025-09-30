@@ -72,11 +72,11 @@ export default function BackgroundAnimation() {
           drops[i] = 0
         }
 
-        drops[i]++
+  drops[i] += 0.5
       }
     }
 
-    const interval = setInterval(draw, 50)
+  const interval = setInterval(draw, 90)
 
     return () => {
       clearInterval(interval)
@@ -89,7 +89,7 @@ export default function BackgroundAnimation() {
       {/* Matrix Canvas */}
       <canvas
         ref={canvasRef}
-        className="fixed top-0 left-0 w-screen h-screen pointer-events-none z-0 opacity-30"
+        className="fixed top-0 left-0 w-screen h-screen pointer-events-none z-0 opacity-35"
         style={{
           width: '100vw',
           height: '100vh',
